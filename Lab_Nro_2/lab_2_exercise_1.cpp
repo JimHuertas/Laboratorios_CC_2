@@ -1,9 +1,6 @@
 #include<iostream>
 using namespace std;
 
-int array[17]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
-
-
 int suma_iterativo(int array[], int tam)
 {
 	int sum=0;
@@ -12,14 +9,24 @@ int suma_iterativo(int array[], int tam)
 	return sum;
 }
 
-int suma_recursiva (int num, int tam)
+
+
+int suma_recursiva (int array[], int tam)
 {	
-	int sum=0;
-	if (suma_recursiva(array[tam], tam) == array[0])
-		return array[0];
-	
-	return sum+=suma_recursiva (array[tam--], tam);
+	int auxi=tam;
+	int sum;
+
+	if (tam == 0)
+	{
+		return array[auxi];
+	}
+	else
+		sum=array[auxi] + suma_recursiva(array, auxi-1 );
+		 
 		
+	return sum;
+
+
 }
 
 
@@ -31,8 +38,8 @@ int main()
 		cout<<array[i]<<" ";
 	cout<<endl;
 
-	cout<<endl<<suma_iterativo(array, tam);
-	//cout<<endl<<sumna_recursiva(array[],tam)
+	cout<<endl<<"Resultado Iterativo: "<<suma_iterativo(array, tam)<<endl;
+	cout<<endl<<"Resultado Recursivo: "<<suma_recursiva (array, tam-1);
 	
 
 }
