@@ -4,9 +4,9 @@ using namespace std;
 
 
 
-int longitud_iterativa (char *plbra){
+int longitud_iterativa (char *word){
 	int cont=0;
-	while (*(plbra+cont) != NULL)
+	while (*(word+cont) != NULL)
 		cont++;
 	
 	return cont++;
@@ -22,8 +22,7 @@ int longitud_recursiva (char *word, int cont){
 
 
 int main(){
-	char word[]="Ciencia de la computacion 2 - Profesor Alvaro Mamani";
-	int tam=sizeof(word)/sizeof(*word);
+	char word[]="Ciencia de la computacion 2 - Profesor Alvaro Mamani ";
 	char *ptr = word;
 	
 	
